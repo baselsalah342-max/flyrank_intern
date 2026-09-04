@@ -1,0 +1,105 @@
+{
+  "base_rate_full": 0.5421,
+  "base_rate_train_grouped": 0.55,
+  "base_rate_test_grouped": 0.5165,
+  "split": {
+    "method": "GroupShuffleSplit by client_id",
+    "test_size": 0.25,
+    "random_state": 42,
+    "train_clients": 24,
+    "test_clients": 8,
+    "train_rows": 22885,
+    "test_rows": 7115,
+    "held_out_clients": [
+      "client_434c9b5ae5",
+      "client_4e07408562",
+      "client_8527a891e2",
+      "client_8b940be7fb",
+      "client_bdd2d3af3a",
+      "client_d029fa3a95",
+      "client_e629fa6598",
+      "client_f369cb89fc"
+    ]
+  },
+  "grouped_precision_at_k": {
+    "RandomForest": {
+      "10": 0.7,
+      "20": 0.7,
+      "50": 0.7,
+      "100": 0.65,
+      "500": 0.646,
+      "1000": 0.658
+    },
+    "LogReg": {
+      "10": 0.8,
+      "20": 0.8,
+      "50": 0.72,
+      "100": 0.66,
+      "500": 0.644,
+      "1000": 0.642
+    },
+    "Baseline_rule": {
+      "10": 0.5,
+      "20": 0.45,
+      "50": 0.46,
+      "100": 0.39,
+      "500": 0.494,
+      "1000": 0.506
+    },
+    "ROC_AUC": {
+      "RandomForest": 0.6155,
+      "LogReg": 0.6113
+    },
+    "PR_AUC": {
+      "RandomForest": 0.608,
+      "LogReg": 0.6033
+    }
+  },
+  "full_slice_precision_at_k_rule": {
+    "10": 0.8,
+    "20": 0.85,
+    "50": 0.74,
+    "100": 0.68,
+    "500": 0.708,
+    "1000": 0.671
+  },
+  "reason_code_counts": {
+    "HIGH_VOLUME_REVIEW": 8283,
+    "STALE_MODERATE_AT_RISK": 7816,
+    "LOW_SIGNAL_MONITOR": 6789,
+    "STALE_MODERATE_VISIBLE": 3605,
+    "FRESH_BUT_FLAGGED": 2302,
+    "NO_POSITION_DATA": 1205
+  },
+  "archetype_counts": {
+    "Fading-Performer": 11421,
+    "Heavyweight": 8283,
+    "Long-Tail": 6789,
+    "Quiet-Slider": 2302,
+    "Needs-Data-Check": 1205
+  },
+  "priority_counts": {
+    "1": 11421,
+    "2": 2302,
+    "3": 8283,
+    "4": 7994
+  },
+  "versions": {
+    "sklearn": "1.9.0",
+    "pandas": "3.0.3",
+    "numpy": "2.5.1",
+    "python": "3.14.7"
+  },
+  "label_rule": "is_declining = (trend_direction == 'down') where down is trend_pct < -20% on impressions_last_30d vs impressions_prev_30d",
+  "rate_note": "ctr, engagement_rate, scroll_rate, ai_traffic_pct are x100 percentages (0.76 means 0.76%); scroll_rate/ai_traffic_pct can exceed 100 by design; avg_position 0 means no data",
+  "leakage_guard": "trend_pct, trend_direction, *_last_30d/*_prev_30d never features; IDs grouping only",
+  "exports": {
+    "queue": "work/outputs/action_playbook_queue.csv",
+    "top50": "work/outputs/playbook_top50.csv",
+    "figures": [
+      "work/figures/playbook_precision_at_k.png",
+      "work/figures/playbook_archetype_risk.png"
+    ]
+  },
+  "intended_capacity": "50 reviews/week; operating metric is P@50, not accuracy@0.5"
+}

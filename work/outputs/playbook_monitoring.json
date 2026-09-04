@@ -1,0 +1,35 @@
+{
+  "triggers": {
+    "pause_bulk_refresh": "P@50 < 0.55 for 2 consecutive weeks on labeled holdback",
+    "re_baseline": "base rate shifts > 5pp vs 0.542",
+    "audit_mix": "reason-code mix in top-200 shifts >15pp",
+    "instrumentation": "avg_position==0 >8% or missing word_count >35%",
+    "calibration": "mean rf_prob in top-50 overstates observed by >0.15",
+    "economics": "hours per expected winner >2x initial"
+  },
+  "snapshot": {
+    "base_full": 0.5421,
+    "base_grouped_test": 0.5165,
+    "avg_position_zero_rate": 0.0402,
+    "missing_word_count_rate": 0.2566,
+    "rf_prob_p80": 0.7942,
+    "top50_mean_rf": 0.9813,
+    "top50_observed_precision_full": 1.0,
+    "top50_observed_precision_holdout": 0.7,
+    "holdout_P50_RF": 0.7,
+    "holdout_P50_LR": 0.72,
+    "reason_mix_top200_full": {
+      "HIGH_VOLUME_REVIEW": 143,
+      "STALE_MODERATE_AT_RISK": 24,
+      "FRESH_BUT_FLAGGED": 24,
+      "STALE_MODERATE_VISIBLE": 9
+    },
+    "reason_mix_top200_holdout": {
+      "FRESH_BUT_FLAGGED": 108,
+      "STALE_MODERATE_AT_RISK": 47,
+      "HIGH_VOLUME_REVIEW": 20,
+      "STALE_MODERATE_VISIBLE": 17,
+      "LOW_SIGNAL_MONITOR": 8
+    }
+  }
+}
