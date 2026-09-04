@@ -1,0 +1,136 @@
+{
+  "base_rate": 0.5421,
+  "freshness_tier": [
+    {
+      "freshness_tier": "91-180",
+      "mean": 0.6111,
+      "n": 9171,
+      "declining": 5604,
+      "flag_small": false
+    },
+    {
+      "freshness_tier": "31-90",
+      "mean": 0.5886,
+      "n": 175,
+      "declining": 103,
+      "flag_small": false
+    },
+    {
+      "freshness_tier": "0-30",
+      "mean": 0.5114,
+      "n": 20480,
+      "declining": 10473,
+      "flag_small": false
+    },
+    {
+      "freshness_tier": "181+",
+      "mean": 0.4713,
+      "n": 174,
+      "declining": 82,
+      "flag_small": false
+    }
+  ],
+  "impression_tier_bucket": [
+    {
+      "impression_tier": "moderate",
+      "mean": 0.6147,
+      "n": 10469,
+      "declining": 6435,
+      "flag_small": false
+    },
+    {
+      "impression_tier": "good",
+      "mean": 0.5861,
+      "n": 7205,
+      "declining": 4223,
+      "flag_small": false
+    },
+    {
+      "impression_tier": "excellent",
+      "mean": 0.462,
+      "n": 1078,
+      "declining": 498,
+      "flag_small": false
+    },
+    {
+      "impression_tier": "low",
+      "mean": 0.4539,
+      "n": 11248,
+      "declining": 5106,
+      "flag_small": false
+    }
+  ],
+  "ctr_bucket": [
+    {
+      "_ctr_bucket": "0-0.2",
+      "mean": 0.6399,
+      "n": 7093,
+      "declining": 4539,
+      "flag_small": false
+    },
+    {
+      "_ctr_bucket": "0.2-0.5",
+      "mean": 0.5682,
+      "n": 5546,
+      "declining": 3151,
+      "flag_small": false
+    },
+    {
+      "_ctr_bucket": "0.5-1",
+      "mean": 0.5134,
+      "n": 2460,
+      "declining": 1263,
+      "flag_small": false
+    },
+    {
+      "_ctr_bucket": "0",
+      "mean": 0.4967,
+      "n": 13212,
+      "declining": 6562,
+      "flag_small": false
+    },
+    {
+      "_ctr_bucket": "1+",
+      "mean": 0.4423,
+      "n": 1689,
+      "declining": 747,
+      "flag_small": false
+    }
+  ],
+  "age_bucket": [
+    {
+      "_age_bucket": "31-90",
+      "mean": 0.6687,
+      "n": 492,
+      "declining": 329,
+      "flag_small": false
+    },
+    {
+      "_age_bucket": "91-180",
+      "mean": 0.6256,
+      "n": 11780,
+      "declining": 7369,
+      "flag_small": false
+    },
+    {
+      "_age_bucket": "181-365",
+      "mean": 0.5149,
+      "n": 11368,
+      "declining": 5853,
+      "flag_small": false
+    },
+    {
+      "_age_bucket": "365+",
+      "mean": 0.4263,
+      "n": 6360,
+      "declining": 2711,
+      "flag_small": false
+    }
+  ],
+  "verdicts": {
+    "content_age": "OPPOSITE",
+    "visibility": "MIXED",
+    "ctr": "MIXED",
+    "staleness_flag_linked": "CONFIRMED"
+  }
+}
