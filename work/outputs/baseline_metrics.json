@@ -1,0 +1,18 @@
+{
+  "base_rate": 0.5421,
+  "candidates": 4595,
+  "precision_at_k": {
+    "10": 0.8,
+    "20": 0.85,
+    "50": 0.74,
+    "100": 0.68,
+    "500": 0.708,
+    "1000": 0.671
+  },
+  "rule": "stale(>=90) * moderate(100<=imp<3000) * impressions_90d",
+  "reason_codes": [
+    "stale_moderate_visible",
+    "low_priority"
+  ],
+  "n_rows": 30000
+}
